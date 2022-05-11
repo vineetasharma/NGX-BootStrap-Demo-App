@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 
 import { AccordionComponent } from './ngx-bootstrap-components-demo/accordion/accordion.component';
+import { AnimatedAccordionComponent} from './ngx-bootstrap-components-demo/animated-accordion/animated-accordion.component'
 
 const routes: Routes =[
-  {path: 'accordion', component: AccordionComponent}
+  {path: 'accordion', component: AccordionComponent},
+  {path: 'animated-accordion', component: AnimatedAccordionComponent}
 ];
 
 @NgModule({
@@ -16,7 +18,8 @@ const routes: Routes =[
     RouterModule
   ],
   declarations: [
-    AccordionComponent
+    AccordionComponent,
+    AnimatedAccordionComponent
   ]
 })
 export class AppRoutingModule { }

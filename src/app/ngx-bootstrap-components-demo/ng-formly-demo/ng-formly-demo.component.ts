@@ -34,7 +34,18 @@ export class NgFormlyDemoComponent implements OnInit {
         placeholder: 'Enter full Name!!',
         required: true,
       }
-    }
+    },
+    {
+      key: 'text',
+      type: 'input',
+      templateOptions: {
+        label: 'Hey!'
+      },
+      expressionProperties: {
+        'templateOptions.disabled': '!model.name',
+        'templateOptions.placeholder': 'model.name ? "Enter text here" : "This one is disabled if there is no Name"'
+      },
+    },
   ];
 
   onSubmit(model:any) {

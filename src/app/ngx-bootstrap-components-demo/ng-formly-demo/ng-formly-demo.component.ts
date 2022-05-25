@@ -33,6 +33,13 @@ export class NgFormlyDemoComponent implements OnInit {
         label: 'Full Name',
         placeholder: 'Enter full Name!!',
         required: true,
+      },
+      expressionProperties: {
+        'templateOptions.disabled': (model: any, formState: any, field) => {
+          console.log('Model------',model,formState,field, this.model);
+          // access to the main model can be through `this.model` or `formState` or `model
+          return !(model && model.email);
+        },
       }
     },
     {

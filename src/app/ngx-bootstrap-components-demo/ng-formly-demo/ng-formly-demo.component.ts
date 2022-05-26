@@ -53,6 +53,29 @@ export class NgFormlyDemoComponent implements OnInit {
         'templateOptions.placeholder': 'model.name ? "Enter text here" : "This one is disabled if there is no Name"'
       },
     },
+    {
+      key: 'address',
+      wrappers: ['panel'],
+      templateOptions: { label: 'Address' },
+      fieldGroup: [{
+        key: 'city',
+        type: 'input',
+        templateOptions: {
+          required: true,
+          type: 'text',
+          label: 'City',
+        },
+      },
+      {
+        key: 'town',
+        type: 'input',
+        templateOptions: {
+          required: true,
+          type: 'text',
+          label: 'Town',
+        },
+      }],
+     },
   ];
 
   onSubmit(model:any) {

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormGroup, FormControl, ValidationErrors} from '@angular/forms';
 import {FormlyFieldConfig} from '@ngx-formly/core';
+
+
+export function IpValidator(control: FormControl): ValidationErrors {
+  return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? {} : { 'ip': true };
+}
 
 @Component({
   selector: 'app-ng-formly-demo',
@@ -76,6 +81,43 @@ export class NgFormlyDemoComponent implements OnInit {
         },
       }],
      },
+     {
+      key: 'ipNgModule',
+      type: 'input',
+      templateOptions: {
+        label: 'IP Address (using custom validation declared in ngModule)',
+        required: true,
+      },
+      validators: {
+        validation: ['ip'],
+      },
+    },
+    {
+      key: 'ipValidators',
+      type: 'input',
+      templateOptions: {
+        label: 'IP Address (using custom validation through `validators.validation` property)',
+        required: true,
+      },
+      validators: {
+        validation: [IpValidator],
+      },
+    },
+    {
+      key: 'ip',
+      type: 'input',
+      templateOptions: {
+        label: 'IP Address (using custom validation through `validators.expression` property)',
+        description: 'custom validation message through `validators` property',
+        required: true,
+      },
+      validators: {
+        ip: {
+          expression: (c:any) => !c.value || /(\d{1,3}\.){3}\d{1,3}/.test(c.value),
+          message: (error: any, field: FormlyFieldConfig) => `"${field?.formControl?.value}" is not a valid IP Address from json`,
+        },
+      },
+    },
   ];
 
   onSubmit(model:any) {

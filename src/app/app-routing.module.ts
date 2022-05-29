@@ -6,6 +6,7 @@ import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig} from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormControl, ValidationErrors} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import "@angular/compiler";
 
@@ -49,7 +50,8 @@ const routes: Routes =[
       { name: 'ip', message: IpValidatorMessage },
       { name: 'required', message: 'This field is required' },
     ], }),
-    FormlyBootstrapModule
+    FormlyBootstrapModule,
+    BrowserAnimationsModule
   ],
   exports: [
     RouterModule

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, ValidationErrors} from '@angular/forms';
 import {FormlyFieldConfig} from '@ngx-formly/core';
+import { Router } from '@angular/router';
 
 
 export function IpValidator(control: FormControl): ValidationErrors {
@@ -14,7 +15,10 @@ export function IpValidator(control: FormControl): ValidationErrors {
 })
 export class NgFormlyDemoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route : Router) { 
+
+    console.log('this.route-----',this.route);
+  }
 
   ngOnInit(): void {
   }

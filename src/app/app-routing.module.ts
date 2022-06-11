@@ -16,6 +16,7 @@ import { CarouselComponent } from './ngx-bootstrap-components-demo/carousel/caro
 import { PageNotFoundComponent } from './ngx-bootstrap-components-demo/page-not-found/page-not-found.component';
 import { NgFormlyDemoComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/ng-formly-demo.component'
 import { PanelWrapperComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/panel-wrapper.component';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 
 export function IpValidator(control: AbstractControl): ValidationErrors {
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? { ip: false} : { 'ip': true };
@@ -62,7 +63,8 @@ const routes: Routes =[
     CarouselComponent,
     PageNotFoundComponent,
     NgFormlyDemoComponent,
-    PanelWrapperComponent
+    PanelWrapperComponent,
+    ExponentialStrengthPipe
   ]
 })
 export class AppRoutingModule { }

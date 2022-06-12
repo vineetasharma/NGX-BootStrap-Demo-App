@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './ngx-bootstrap-components-demo/page-not-
 import { NgFormlyDemoComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/ng-formly-demo.component'
 import { PanelWrapperComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/panel-wrapper.component';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { HighlightDirective } from './ngx-bootstrap-components-demo/highlight.directive';
 
 export function IpValidator(control: AbstractControl): ValidationErrors {
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? { ip: false} : { 'ip': true };
@@ -64,7 +65,8 @@ const routes: Routes =[
     PageNotFoundComponent,
     NgFormlyDemoComponent,
     PanelWrapperComponent,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    HighlightDirective
   ]
 })
 export class AppRoutingModule { }

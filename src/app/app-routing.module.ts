@@ -16,6 +16,7 @@ import { CarouselComponent } from './ngx-bootstrap-components-demo/carousel/caro
 import { PageNotFoundComponent } from './ngx-bootstrap-components-demo/page-not-found/page-not-found.component';
 import { NgFormlyDemoComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/ng-formly-demo.component'
 import { PanelWrapperComponent } from './ngx-bootstrap-components-demo/ng-formly-demo/panel-wrapper.component';
+import { RxJsFeaturesComponent } from './ngx-bootstrap-components-demo/rx-js-features/rx-js-features.component';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { HighlightDirective } from './ngx-bootstrap-components-demo/highlight.directive';
 
@@ -33,6 +34,7 @@ const routes: Routes =[
   {path: 'carousel', component: CarouselComponent},
   {path: '', component: AccordionComponent},
   {path: 'ng-formly-demo', component: NgFormlyDemoComponent},
+  {path: 'rx-js-features', component:RxJsFeaturesComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -66,7 +68,8 @@ const routes: Routes =[
     NgFormlyDemoComponent,
     PanelWrapperComponent,
     ExponentialStrengthPipe,
-    HighlightDirective
+    HighlightDirective,
+    RxJsFeaturesComponent
   ]
 })
 export class AppRoutingModule { }

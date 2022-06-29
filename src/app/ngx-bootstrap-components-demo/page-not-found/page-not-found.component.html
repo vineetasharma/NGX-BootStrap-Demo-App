@@ -6,4 +6,10 @@
     <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
 
     <p appHighlight>Highlight me!</p>
+
+    <code>promise|async</code>:
+    <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+    <span>Wait for it... {{ greeting | async }}</span>
+
+    <div><code>observable|async</code>: Time: {{ time | async }}</div>
 </div>
